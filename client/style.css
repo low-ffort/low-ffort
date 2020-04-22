@@ -17,3 +17,13 @@ label {
     height: 100px;
     overflow-y:scroll;
 }
+/* DARK MODE */
+@media (prefers-color-scheme: dark) {
+    body {
+        background-color: #111;
+        color: #FFF;
+    }
+    #ctx {
+        border-color: #FFF;
+    }
+}

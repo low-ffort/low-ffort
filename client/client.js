@@ -8,7 +8,10 @@ var uname = document.getElementById("uname");
 var bname = document.getElementById("bname");
 var gameDiv = document.getElementById("game");
 var canvas = document.getElementById("ctx");
-var ctx = canvas.getContext("2d");	
+var ctx = canvas.getContext("2d");
+var isDark = () => {
+	return window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+}
 var socket = io();
 
 // name sing-in and its validation
@@ -79,6 +82,11 @@ var Player = function(initPack){
 	
 	self.draw = function() {
 		ctx.font = 'italic bold 36px Arial';
+		
+		// DARK MODE
+		if (isDark) {
+			ctx.fillStyle = '#fff';
+		};
 
 		var hpWidth = 30 * self.hp / self.hpMax;
 		ctx.fillRect(self.x - hpWidth / 2, self.y - 40, hpWidth, 4);
