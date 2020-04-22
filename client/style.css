@@ -1,0 +1,19 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+}
+label {
+    display: block;
+}
+#uname, #chat-text, #chat-form, #chat-input, #bname {
+    width: 500px;
+}
+#game {
+    display: none;
+}
+#ctx {
+    border:1px solid #000;
+}
+#chat-text {
+    height: 100px;
+    overflow-y:scroll;
+}
